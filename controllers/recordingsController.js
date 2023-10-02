@@ -26,7 +26,7 @@ function myPath(filename) {
 export async function startRecording(req, res) {
   try {
     const uniqueId = generateUniqueId(8);
-    const directoryPath = path.join(recordingsDirectory);
+    const directoryPath = path.join(currentDirectory, uniqueId);
 
     await fs.mkdir(directoryPath, { recursive: true });
     
